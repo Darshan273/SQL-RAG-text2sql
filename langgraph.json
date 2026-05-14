@@ -1,0 +1,7 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "text_to_sql": "./app/graph/builder.py:graph"
+  },
+  "env": "./.env"
+}

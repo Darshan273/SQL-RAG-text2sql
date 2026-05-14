@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+sqlalchemy
+asyncpg
+groq
+langgraph
+langgraph-cli[inmem]
+langsmith
+sqlglot
+pydantic-settings
+python-dotenv
+pytest
+pytest-asyncio
