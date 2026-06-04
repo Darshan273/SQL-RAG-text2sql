@@ -56,7 +56,7 @@ The **Text-to-SQL API** solves the barrier between non-technical users and compl
 graph TD
     START((Start)) --> RG[Read-Only Guard]
     RG -- Safe --> SUP[Supervisor]
-    RG -- Violation --> END((End with Error))
+    RG -- Violation --> END((End))
     
     SUP --> GEN[SQL Generator]
     GEN --> VAL[Validator]
