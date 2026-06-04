@@ -1,4 +1,4 @@
-# 🤖 Text-to-SQL 
+# 🤖 SQL RAG(text2sql)
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109.0+-009688.svg)](https://fastapi.tiangolo.com/)
@@ -289,8 +289,8 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ## 👤 Author / Credits
 
-- **Author**: Your Name / Organization
-- **Contact**: your.email@example.com
+- **Author**: Darshan
+- **Contact**: darshanjain2202@gmail.com
 - **Acknowledgments**: 
   - Thanks to the [LangChain](https://langchain.com) team for LangGraph.
   - Thanks to [Groq](https://groq.com) for providing lightning-fast inference.
