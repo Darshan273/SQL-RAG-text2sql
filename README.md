@@ -73,21 +73,33 @@ The **Text-to-SQL API** solves the barrier between non-technical users and compl
 
 ```mermaid
 graph TD
-    START((Start)) --> RG[Read-Only Guard]
-    RG -- Safe --> SUP[Supervisor]
-    RG -- Violation --> END((End))
+    Start([Start])
+    RG["Read-Only Guard"]
+    SUP["Supervisor"]
+    GEN["SQL Generator"]
+    VAL["Validator"]
+    RET["Retry Logic"]
+    EXE["SQL Executor"]
+    FMT["Result Formatter"]
+    End1([End])
+    End2([End])
+    End3([End])
     
-    SUP --> GEN[SQL Generator]
-    GEN --> VAL[Validator]
+    Start --> RG
+    RG -->|Safe| SUP
+    RG -->|Violation| End1
     
-    VAL -- Invalid --> RET[Retry Logic]
+    SUP --> GEN
+    GEN --> VAL
+    
+    VAL -->|Invalid| RET
     RET --> VAL
     
-    VAL -- Valid --> EXE[SQL Executor]
-    VAL -- Error --> END
+    VAL -->|Valid| EXE
+    VAL -->|Error| End2
     
-    EXE --> FMT[Result Formatter]
-    FMT --> END
+    EXE --> FMT
+    FMT --> End3
 ```
 
 ---
