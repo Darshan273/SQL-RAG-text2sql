@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Model: Llama-3](https://img.shields.io/badge/LLM-Llama--3--70B-purple.svg)](https://groq.com/)
 
-An intelligent, production-grade API that converts natural language questions into optimized SQL queries, executes them against a PostgreSQL database, and returns human-readable insights.
+An intelligent SQL RAG text-to-SQL system that converts natural language questions into optimized SQL queries, executes them against a PostgreSQL database, and returns human-readable insights.
 
 ---
 
@@ -38,7 +38,7 @@ An intelligent, production-grade API that converts natural language questions in
 
 ## 🚀 Overview
 
-The **Text-to-SQL API** solves the barrier between non-technical users and complex databases. By leveraging state-of-the-art LLMs (via Groq) and agentic workflows (via LangGraph), this system does[...]
+The **Text-to-SQL System** solves the barrier between non-technical users and complex databases. By leveraging state-of-the-art LLMs (via Groq) and agentic workflows (via LangGraph), this system does[...]
 
 ---
 
