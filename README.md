@@ -14,7 +14,10 @@ An intelligent, production-grade API that converts natural language questions in
 
 - [🚀 Overview](#-overview)
 - [✨ Key Features](#-key-features)
+- [⚡ Performance Highlights](#-performance-highlights)
 - [🏗️ System Architecture](#-system-architecture)
+- [📊 Database Schema](#-database-schema)
+- [🎬 Demo](#-demo)
 - [🛠️ Tech Stack](#-tech-stack)
 - [📂 Project Structure](#-project-structure)
 - [📋 Prerequisites](#-prerequisites)
@@ -35,7 +38,7 @@ An intelligent, production-grade API that converts natural language questions in
 
 ## 🚀 Overview
 
-The **Text-to-SQL API** solves the barrier between non-technical users and complex databases. By leveraging state-of-the-art LLMs (via Groq) and agentic workflows (via LangGraph), this system doesn't just "guess" SQL—it validates, retries, and formats the output to ensure accuracy and safety. It acts as a bridge, allowing anyone to "chat" with their data without writing a single line of SQL.
+The **Text-to-SQL API** solves the barrier between non-technical users and complex databases. By leveraging state-of-the-art LLMs (via Groq) and agentic workflows (via LangGraph), this system does[...]
 
 ---
 
@@ -47,6 +50,22 @@ The **Text-to-SQL API** solves the barrier between non-technical users and compl
 - **Auto-Retry & Validation**: Automatically fixes syntax errors or schema mismatches before returning results.
 - **High Performance**: Powered by Groq's Llama-3-70B for near-instant SQL generation.
 - **Traceability**: Full integration with LangSmith for debugging and monitoring agent chains.
+
+---
+
+## ⚡ Performance Highlights
+
+### 🎯 Token Efficient
+- **Optimized Prompts**: Carefully crafted system prompts that minimize token usage while maintaining accuracy
+- **Schema-Aware Context**: Only relevant schema information is sent to the LLM, reducing unnecessary tokens
+- **Smart Caching**: Leverages LangGraph's state management to avoid redundant LLM calls
+
+### ⏱️ Lower Time Consumption
+- **Groq's Lightning-Fast Inference**: Powered by Groq's specialized hardware for near-instant SQL generation (typically **<500ms** per query)
+- **Async Architecture**: FastAPI with asyncpg ensures non-blocking database operations
+- **Minimal Retry Overhead**: Smart validation logic reduces the need for multiple LLM calls
+
+**Result**: Complete query execution (question → SQL → results → answer) typically completes in **1-2 seconds**, even for complex queries!
 
 ---
 
@@ -70,6 +89,46 @@ graph TD
     EXE --> FMT[Result Formatter]
     FMT --> END
 ```
+
+---
+
+## 📊 Database Schema
+
+Here's the ecommerce database schema used in the demo:
+
+![Database Schema](demo/postgres%20-%20ecommerce%20-%20public.png)
+
+This schema includes:
+- **users** - User account information
+- **products** - Product catalog
+- **orders** - Customer orders
+- **order_items** - Line items in orders
+- **categories** - Product categories
+- And other related tables for a complete ecommerce system
+
+---
+
+## 🎬 Demo
+
+### Demo Workflow Screenshots
+
+**Step 1: Initial Query Interface**
+![Demo Step 1](demo/Screenshot%202026-06-04%20140803.png)
+
+**Step 2: Query Processing & SQL Generation**
+![Demo Step 2](demo/Screenshot%202026-06-10%20170707.png)
+
+**Step 3: Query Execution & Results**
+![Demo Step 3](demo/Screenshot%202026-06-10%20170740.png)
+
+**Step 4: Advanced Query Example**
+![Demo Step 4](demo/Screenshot%202026-06-10%20171716.png)
+
+**Step 5: Complex Analysis Query**
+![Demo Step 5](demo/Screenshot%202026-06-10%20171807.png)
+
+**Step 6: Multi-Table Join Query**
+![Demo Step 6](demo/Screenshot%202026-06-10%20171834.png)
 
 ---
 
@@ -100,6 +159,7 @@ graph TD
 │   ├── graph/              # LangGraph definition (nodes, edges, state)
 │   ├── schemas/            # Pydantic models for API and Tools
 │   └── tools/              # Custom tools for the agent (DB introspection, etc.)
+├── demo/                   # Demo screenshots and database schema
 ├── langgraph.json          # LangGraph CLI configuration
 ├── requirements.txt        # Python dependency list
 ├── tests/                  # Pytest suite for unit and integration tests
