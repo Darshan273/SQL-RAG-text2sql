@@ -1,11 +1,5 @@
 # SQL RAG(text2sql)
 
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.109.0+-009688.svg)](https://fastapi.tiangolo.com/)
-[![LangGraph](https://img.shields.io/badge/LangGraph-Agentic-orange.svg)](https://langchain-ai.github.io/langgraph/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Model: Llama-3](https://img.shields.io/badge/LLM-Llama--3--70B-purple.svg)](https://groq.com/)
-
 An intelligent SQL RAG text-to-SQL system that converts natural language questions into optimized SQL queries, executes them against a PostgreSQL database, and returns human-readable insights.
 
 ---
