@@ -1,4 +1,4 @@
-# 🤖 SQL RAG(text2sql)
+# SQL RAG(text2sql)
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109.0+-009688.svg)](https://fastapi.tiangolo.com/)
@@ -10,39 +10,39 @@ An intelligent SQL RAG text-to-SQL system that converts natural language questio
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
-- [🚀 Overview](#-overview)
-- [✨ Key Features](#-key-features)
-- [⚡ Performance Highlights](#-performance-highlights)
-- [🏗️ System Architecture](#-system-architecture)
-- [📊 Database Schema](#-database-schema)
-- [🎬 Demo](#-demo)
-- [🛠️ Tech Stack](#-tech-stack)
-- [📂 Project Structure](#-project-structure)
-- [📋 Prerequisites](#-prerequisites)
-- [⚙️ Installation](#-installation)
-- [🔐 Environment Variables](#-environment-variables)
-- [🏃 Running the Project](#-running-the-project)
-- [📡 API Reference](#-api-reference)
-- [📖 Usage Examples](#-usage-examples)
-- [🧪 Testing](#-testing)
-- [🚢 Deployment](#-deployment)
-- [🤝 Contributing](#-contributing)
-- [⚠️ Known Issues / Limitations](#-known-issues--limitations)
-- [🗺️ Roadmap](#-roadmap)
-- [📄 License](#-license)
-- [👤 Author / Credits](#-author--credits)
-
----
-
-## 🚀 Overview
-
-The **Text-to-SQL System** solves the barrier between non-technical users and complex databases. By leveraging state-of-the-art LLMs (via Groq) and agentic workflows (via LangGraph), this system does[...]
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Performance Highlights](#performance-highlights)
+- [System Architecture](#system-architecture)
+- [Database Schema](#database-schema)
+- [Demo](#demo)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Environment Variables](#environment-variables)
+- [Running the Project](#running-the-project)
+- [API Reference](#api-reference)
+- [Usage Examples](#usage-examples)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [Known Issues / Limitations](#known-issues--limitations)
+- [Roadmap](#roadmap)
+- [License](#license)
+- [Author / Credits](#author--credits)
 
 ---
 
-## ✨ Key Features
+## Overview
+
+The **Text-to-SQL System** solves the barrier between non-technical users and complex databases. By leveraging state-of-the-art LLMs (via Groq) and agentic workflows (via LangGraph), this system d[...]
+
+---
+
+## Key Features
 
 - **Agentic Workflow**: Uses LangGraph to manage a multi-step process including generation, validation, and self-correction.
 - **Natural Language Insights**: Converts raw SQL results back into human-friendly explanations.
@@ -53,14 +53,14 @@ The **Text-to-SQL System** solves the barrier between non-technical users and co
 
 ---
 
-## ⚡ Performance Highlights
+## Performance Highlights
 
-### 🎯 Token Efficient
+### Token Efficient
 - **Optimized Prompts**: Carefully crafted system prompts that minimize token usage while maintaining accuracy
 - **Schema-Aware Context**: Only relevant schema information is sent to the LLM, reducing unnecessary tokens
 - **Smart Caching**: Leverages LangGraph's state management to avoid redundant LLM calls
 
-### ⏱️ Lower Time Consumption
+### Lower Time Consumption
 - **Groq's Lightning-Fast Inference**: Powered by Groq's specialized hardware for near-instant SQL generation (typically **<500ms** per query)
 - **Async Architecture**: FastAPI with asyncpg ensures non-blocking database operations
 - **Minimal Retry Overhead**: Smart validation logic reduces the need for multiple LLM calls
@@ -69,7 +69,7 @@ The **Text-to-SQL System** solves the barrier between non-technical users and co
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```mermaid
 graph TD
@@ -92,7 +92,7 @@ graph TD
 
 ---
 
-## 📊 Database Schema
+## Database Schema
 
 Here's the ecommerce database schema used in the demo:
 
@@ -108,7 +108,7 @@ This schema includes:
 
 ---
 
-## 🎬 Demo
+## Demo
 
 ### Demo Workflow Screenshots
 
@@ -132,7 +132,7 @@ This schema includes:
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Component | Technology | Purpose |
 | :--- | :--- | :--- |
@@ -146,7 +146,7 @@ This schema includes:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 .
@@ -168,7 +168,7 @@ This schema includes:
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 - **Python**: 3.10 or 3.11
 - **PostgreSQL**: Version 13+ (Required for query execution)
@@ -177,7 +177,7 @@ This schema includes:
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 1. **Clone the repository:**
    ```bash
@@ -204,7 +204,7 @@ This schema includes:
 
 ---
 
-## 🔐 Environment Variables
+## Environment Variables
 
 | Variable | Required | Default | Description |
 | :--- | :--- | :--- | :--- |
@@ -217,7 +217,7 @@ This schema includes:
 
 ---
 
-## 🏃 Running the Project
+## Running the Project
 
 ### Development Mode
 Run the FastAPI server with hot-reload:
@@ -232,11 +232,11 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
 ```
 
 ### Docker
-(🔧 TODO: Add Dockerfile and docker-compose.yml for production deployment)
+(TODO: Add Dockerfile and docker-compose.yml for production deployment)
 
 ---
 
-## 📡 API Reference
+## API Reference
 
 ### 1. Execute Query
 - **Method**: `POST`
@@ -265,7 +265,7 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
 
 ---
 
-## 📖 Usage Examples
+## Usage Examples
 
 ### Using `curl`
 ```bash
@@ -287,7 +287,7 @@ print(response.json()["answer"])
 
 ---
 
-## 🧪 Testing
+## Testing
 
 The project uses `pytest` with `pytest-asyncio` for testing the asynchronous API and graph logic.
 
@@ -303,16 +303,16 @@ The project uses `pytest` with `pytest-asyncio` for testing the asynchronous API
 
 ---
 
-## 🚢 Deployment
+## Deployment
 
 ### Deploy to Render / Railway
 1. Connect your GitHub repository.
-2. Add the environment variables listed in the [Environment Variables](#-environment-variables) section.
+2. Add the environment variables listed in the [Environment Variables](#environment-variables) section.
 3. Set the start command to: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. **Fork** the project.
 2. **Clone** your fork (`git clone ...`).
@@ -323,7 +323,7 @@ The project uses `pytest` with `pytest-asyncio` for testing the asynchronous API
 
 ---
 
-## ⚠️ Known Issues / Limitations
+## Known Issues / Limitations
 
 - **Schema Complexity**: Extremely complex schemas with 50+ tables might require fine-tuning or RAG-based context injection for the supervisor.
 - **Dialect Support**: Optimized primarily for **PostgreSQL**. Support for MySQL or SQLite is experimental via `sqlglot`.
@@ -331,7 +331,7 @@ The project uses `pytest` with `pytest-asyncio` for testing the asynchronous API
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [ ] Support for multiple database dialects (MySQL, Snowflake).
 - [ ] RAG-based schema fetching for large databases.
@@ -341,13 +341,13 @@ The project uses `pytest` with `pytest-asyncio` for testing the asynchronous API
 
 ---
 
-## 📄 License
+## License
 
 Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ---
 
-## 👤 Author / Credits
+## Author / Credits
 
 - **Author**: Darshan
 - **Contact**: darshanjain2202@gmail.com
